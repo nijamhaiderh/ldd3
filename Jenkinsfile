@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('stage1') {
       steps {
-        sh './clean'
+        sh 'make clean'
       }
     }
   }
