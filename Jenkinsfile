@@ -1,9 +1,24 @@
 pipeline {
-  agent none
+  agent {
+    node {
+      label 'node1'
+    }
+
+  }
   stages {
     stage('stage1') {
+      agent {
+        node {
+          label 'clean'
+        }
+
+      }
       steps {
-        sh 'make clean'
+        sh '''#!/bin/bash
+
+
+make clean
+'''
       }
     }
   }
